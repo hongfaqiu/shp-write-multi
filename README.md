@@ -2,6 +2,8 @@
 
 # shp-write
 
+changed orgin shp-write repository's output, and projection coordinate system to CGCS_2000_3_Degree_GK_Zone_40(EPSG:4528)
+
 Writes shapefile in pure javascript. Uses [dbf](https://github.com/tmcw/dbf)
 for the data component, and [jsZIP](http://stuk.github.io/jszip/) to generate
 ZIP file downloads in-browser.
@@ -32,11 +34,8 @@ var shpwrite = require('shp-write');
 // (optional) set names for feature types and zipped folder
 var options = {
     folder: 'myshapes',
-    types: {
-        point: 'mypoints',
-        polygon: 'mypolygons',
-        line: 'mylines'
-    }
+    names: ['test','test1'] 
+    // output .shp name with geojson's features, default is ['mashpes_POINT_1', 'mashpes_POINT_2']
 }
 // a GeoJSON bridge for features
 shpwrite.download({
@@ -65,6 +64,21 @@ shpwrite.download({
     ]
 }, options);
 // triggers a download of a zip file with shapefiles contained within.
+```
+
+output file
+
+```js
+下载.zip
+└── myshapes
+    ├── test.dbf
+    ├── test.prj
+    ├── test.shp
+    ├── test.shx
+    ├── test1.dbf
+    ├── test1.prj
+    ├── test1.shp
+    └── test1.shx
 ```
 
 ## API

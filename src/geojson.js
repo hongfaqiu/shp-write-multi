@@ -1,6 +1,19 @@
 module.exports.point = justType('Point', 'POINT');
 module.exports.line = justType('LineString', 'POLYLINE');
 module.exports.polygon = justType('Polygon', 'POLYGON');
+module.exports.transform = transform;
+
+// orgin code don't support mulitiple features, just output three types(point, polyline, polygon) .shp
+// change to output mulityiple features, one feature in geojson outputs one .shp file, and then total .shp package into a .zip file
+function transform(gj) {
+  return gj.features.map(feature => {
+    return {
+      geometries: [feature.geometry.coordinates],
+      properties: [feature.properties],
+      type: feature.geometry.type.toUpperCase()
+    }
+  })
+}
 
 function justType(type, TYPE) {
     return function(gj) {

@@ -1,5 +1,5 @@
 {
-  "name": "shp-write",
+  "name": "shp-write-multi",
   "version": "0.3.2",
   "description": "write shapefiles from pure javascript",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mapbox/shp-write.git"
+    "url": "git://github.com/hongfaqiu/shp-write-multi.git"
   },
   "files": [
     "index.js",

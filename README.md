@@ -12,11 +12,11 @@ ZIP file downloads in-browser.
 
 For node.js or [browserify](https://github.com/substack/node-browserify)
 
-    npm install --save shp-write
+    npm install --save shp-write-multi
 
 Or in a browser
 
-    https://unpkg.com/shp-write@latest/shpwrite.js
+    https://unpkg.com/shp-write-multi@latest/shpwrite.js
 
 ## Caveats
 

@@ -4,6 +4,8 @@
 
 changed orgin shp-write repository's output, and projection coordinate system to CGCS_2000_3_Degree_GK_Zone_40(EPSG:4528)
 
+``origin repository`` [shp-write](https://github.com/mapbox/shp-write)
+
 Writes shapefile in pure javascript. Uses [dbf](https://github.com/tmcw/dbf)
 for the data component, and [jsZIP](http://stuk.github.io/jszip/) to generate
 ZIP file downloads in-browser.
@@ -13,10 +15,6 @@ ZIP file downloads in-browser.
 For node.js or [browserify](https://github.com/substack/node-browserify)
 
     npm install --save shp-write-multi
-
-Or in a browser
-
-    https://unpkg.com/shp-write-multi@latest/shpwrite.js
 
 ## Caveats
 
@@ -29,7 +27,7 @@ Or in a browser
 ## Example
 
 ```js
-var shpwrite = require('shp-write');
+var shpwrite = require('shp-write-multi');
 
 // (optional) set names for feature types and zipped folder
 var options = {
@@ -106,15 +104,3 @@ arrays, generate a shapfile and call the callback with `err` and an object with
 
 Generate a ArrayBuffer of a zipped shapefile, dbf, and prj, from a GeoJSON
 object.
-
-## Other Implementations
-
-* https://code.google.com/p/pyshp/
-
-## Reference
-
-* http://www.esri.com/library/whitepapers/pdfs/shapefile.pdf
-
-## Contributors
-
-* Nick Baugh <niftylettuce@gmail.com>

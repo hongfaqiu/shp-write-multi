@@ -1,6 +1,6 @@
 {
   "name": "shp-write-multi",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "write shapefiles from pure javascript",
   "main": "index.js",
   "scripts": {

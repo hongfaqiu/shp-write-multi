@@ -1,8 +1,8 @@
 [![Build Status](https://secure.travis-ci.org/mapbox/shp-write.svg?branch=master)](http://travis-ci.org/mapbox/shp-write)
 
-# shp-write
+# shp-write-multi
 
-changed orgin shp-write repository's output, and projection coordinate system to CGCS_2000_3_Degree_GK_Zone_40(EPSG:4528)
+changed orgin shp-write repository's output, and projection coordinate system to CGCS_2000(EPSG:4490)
 
 ``origin repository`` [shp-write](https://github.com/mapbox/shp-write)
 
@@ -32,7 +32,7 @@ Or in a browser
 ```js
 var shpwrite = require('shp-write-multi');
 
-// (optional) set names for feature types and zipped folder
+// (optional) set names for features and zipped folder
 var options = {
     folder: 'myshapes',
     names: ['test','test1'] 

@@ -35,11 +35,11 @@ var shpwrite = require('shp-write-multi');
 // (optional) set names for features and zipped folder
 var options = {
     folder: 'myshapes',
-    names: ['test','test1'] 
+    names: ['test','test1']
     // output .shp name with geojson's features, default is ['mashpes_POINT_1', 'mashpes_POINT_2']
 }
 // a GeoJSON bridge for features
-shpwrite.download({
+await shpwrite.download({
     type: 'FeatureCollection',
     features: [
         {
@@ -84,12 +84,12 @@ output file
 
 ## API
 
-### `download(geojson)`
+### `download(geojson)` ⇒ Asynchronous call
 
 Given a [GeoJSON](http://geojson.org/) FeatureCollection as an object,
 converts convertible features into Shapefiles and triggers a download.
 
-### `write(data, geometrytype, geometries, callback)`
+### `write(data, geometrytype, geometries, callback)` ⇒ Synchronous call
 
 Given data, an array of objects for each row of data, geometry, the OGC standard
 geometry type (like `POINT`), geometries, a list of geometries as bare coordinate
@@ -103,7 +103,7 @@ arrays, generate a shapfile and call the callback with `err` and an object with
 }
 ```
 
-### `zip(geojson)`
+### `zip(geojson)` ⇒ Asynchronous call
 
 Generate a ArrayBuffer of a zipped shapefile, dbf, and prj, from a GeoJSON
 object.

@@ -3,7 +3,7 @@ var write = require('./write'),
   prj = require('./prj'),
   JSZip = require('jszip');
 
-module.exports = function (gj, options) {
+module.exports = async function (gj, options) {
 
   // handle input names, keep it from reapting
   let names = options.names ? handleName(options.names) : [];
@@ -43,7 +43,9 @@ module.exports = function (gj, options) {
     generateOptions.type = 'nodebuffer';
   }
 
-  return zip.generate(generateOptions);
+  const result = await zip.generateAsync(generateOptions);
+
+  return result;
 };
 
 function handleName(arr) {

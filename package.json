@@ -36,7 +36,7 @@
   },
   "dependencies": {
     "dbf": "0.1.4",
-    "jszip": "2.5.0"
+    "jszip": "^3.7.1"
   },
   "devDependencies": {
     "browserify": "^13.0.0",

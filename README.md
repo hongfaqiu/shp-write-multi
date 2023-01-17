@@ -2,8 +2,6 @@
 
 # shp-write-multi
 
-changed orgin shp-write repository's output, and projection coordinate system to CGCS_2000(EPSG:4490)
-
 ``origin repository`` [shp-write](https://github.com/mapbox/shp-write)
 
 Writes shapefile in pure javascript. Uses [dbf](https://github.com/tmcw/dbf)
@@ -34,9 +32,9 @@ var shpwrite = require('shp-write-multi');
 
 // (optional) set names for features and zipped folder
 var options = {
-    folder: 'myshapes',
+  folder: 'myshapes',
+    // output .shp name with geojson's features, default is ['myshpes_POINT_1', 'myshpes_POINT_2']
     names: ['test','test1']
-    // output .shp name with geojson's features, default is ['mashpes_POINT_1', 'mashpes_POINT_2']
 }
 // a GeoJSON bridge for features
 await shpwrite.download({
@@ -70,7 +68,7 @@ await shpwrite.download({
 output file
 
 ```js
-下载.zip
+download.zip
 └── myshapes
     ├── test.dbf
     ├── test.prj

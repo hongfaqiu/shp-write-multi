@@ -28,11 +28,11 @@ Or in a browser
 ## Example
 
 ```js
-var shpwrite = require('shp-write-multi');
+const shpwrite = require('shp-write-multi');
 
 // (optional) set names for features and zipped folder
-var options = {
-  folder: 'myshapes',
+const options = {
+    folder: 'myshapes',
     // output .shp name with geojson's features, default is ['myshpes_POINT_1', 'myshpes_POINT_2']
     names: ['test','test1']
 }

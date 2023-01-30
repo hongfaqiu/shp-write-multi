@@ -3,6 +3,15 @@ var write = require('./write'),
   prj = require('./prj'),
   JSZip = require('jszip');
 
+function handleName(arr) {
+  let map = {};
+  return arr.map(item => {
+    map[item] = map[item] === undefined ? 0 : map[item] + 1;
+    map[item] && (item += map[item]);
+    return item;
+  })
+}
+
 module.exports = async function (gj, options) {
 
   // handle input names, keep it from reapting
@@ -36,7 +45,7 @@ module.exports = async function (gj, options) {
   });
 
   var generateOptions = {
-    compression: 'STORE'
+    type: 'base64'
   };
 
   if (!process.browser) {
@@ -47,12 +56,3 @@ module.exports = async function (gj, options) {
 
   return result;
 };
-
-function handleName(arr) {
-  let map = {};
-  return arr.map(item => {
-    map[item] = map[item] === undefined ? 0 : map[item] + 1;
-    map[item] && (item += map[item]);
-    return item;
-  })
-}

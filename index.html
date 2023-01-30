@@ -1,1 +1,65 @@
-<script src='bundle.js'></script>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>shp-write-multi</title>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+  <button id="btn">Download</button>
+  <!-- run 'npm run make' to generate browser's module -->
+  <script src="./shpwrite.js"></script>
+
+  <script type="module">
+
+    // (optional) set names for features and zipped folder
+    async function download() {
+      const options = {
+        folder: "myshapes",
+        // output .shp name with geojson's features, default is ['myshpes_POINT_1', 'myshpes_POINT_2']
+        names: ["test", "test1"]
+      };
+      // a GeoJSON bridge for features
+      try {
+        await shpwrite.download(
+          {
+            type: "FeatureCollection",
+            features: [
+              {
+                type: "Feature",
+                geometry: {
+                  type: "Point",
+                  coordinates: [0, 0]
+                },
+                properties: {
+                  name: "Foo"
+                }
+              },
+              {
+                type: "Feature",
+                geometry: {
+                  type: "Point",
+                  coordinates: [0, 10]
+                },
+                properties: {
+                  name: "Bar"
+                }
+              }
+            ]
+          },
+          options
+        );
+      } catch (error) {
+        alert("Unable to download, open console for details");
+        console.log(error);
+      }
+    }
+
+    const btn = document.getElementById("btn");
+    btn.onclick = download;
+
+  </script>
+</body>
+
+</html>
